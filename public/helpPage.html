@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="../images/favicon.ico" rel="icon" type="image/vnd.microsoft.icon">
+		<title>Help</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="../stylesheets/style.css">
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	</head>
+	
+	<body onload="getActiveTab()">
+		<nav class="navbar navbar-custom">
+		  <div class="container-fluid">
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			  <ul class="nav navbar-nav">
+				<li><a href="/">Home <span class="sr-only">(current)</span></a></li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menu <span class="caret"></span></a>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="/Product/A">Product A</a></li>
+					<li><a href="/Product/B">Product B</a></li>
+					<li class="divider"></li>
+					<li><a href="#">Help</a></li>
+				  </ul>
+				</li>
+			  </ul>
+			  <ul class="nav navbar-nav navbar-right">
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				  <a class="navbar-brand" href="#">AppName</a>
+				</div>
+			  </ul>
+			</div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+		
+		<div id="page-wrapper">	
+			<div class="page-header">
+			  <h1>Application Help</h1>
+			</div>
+		
+			<div id="helpPageTabs" class="pageTabs">
+				<ul class="nav nav-tabs">
+				  <li id="hApplication" name="tab" role="presentation" class="active"><a id="hApplication" onclick="changeActiveTab(this.id);">Web Application</a></li>
+				  <li id="hAnalysis" name="tab" role="presentation"><a id="hAnalysis" onclick="changeActiveTab(this.id);">Analysis Process</a></li>
+				  <li id="hFAQ" name="tab" role="presentation"><a id="hFAQ" onclick="changeActiveTab(this.id);">FAQ</a></li>
+				</ul>
+			</div>
+			
+			<div name='content' id="hApplication" class="active" style="text-align:center;">
+				<br>
+				This application was developed in collaboration with <a href='http://cs.cf.ac.uk' target='blank'>Cardiff University</a> and developed by <a href='http://uk.linkedin.com/in/LaurenMWelsh' target='blank'>Lauren Welsh</a>.  <br>
+				
+				<div id="helpLogoWrapper">
+					<div id="hviridor" class="logo">
+						<img src="images/viridor_logo.jpg" alt="Viridor" style="width:100%;height:100%">
+					</div>
+					<div id="hcardiffUni" class="logo">
+						<img src="images/cardiff_logo.jpg" alt="Cardiff University" style="width:100%;height:100%">
+					</div>
+				</div>
+
+				The application is intended to be used to support changes within the production department in order to increase profit margins. For <br>
+				further details about this application and its use within Viridor email <a href='mailto:itsupport@viridor.co.uk'>itsupport@viridor.co.uk</a>
+				<br><br>
+			</div>
+			<div name='content' id="hAnalysis" style="display:none;width:80%;margin-left:10%;">
+				<br>
+				The analysis performed in this application was completed using automated methods within WEKA (a data mining application) and a
+				combination of manual data analytics.  Cluster analysis was used to determine the relative profitability of a shift given its level 
+				of production in comparison with other shifts.<br>
+				
+				<br>
+				Data for both Product A and Product B have been analysed using cluster analysis to give each shift a profitability measure.  This measure can
+				be one of three values, following Viridor's current traffic light system used within Procurement and HR. <br>
+				
+				<img src="images/trafficLight_System.jpg" alt="Traffic light system diagram" style="width:50%;height:50%;margin-left:25%;"><br>
+				
+				 
+				This system was chosen by the management department within the Stockport, UK site and can be discussed directly with them.  For a detailed outline
+				of the analysis process and its findings please refer to 
+				<a href="https://drive.google.com/open?id=0B-f2m-vgs_0gbHpXYnhsamZackk&authuser=0" target='blank'>Cardiff University - Lauren Welsh: Dissertation 2015</a>.
+				<br><br>
+			</div>
+			<div name='content' id="hFAQ" style="display:none;width:80%;margin-left:10%;">	
+				<br>
+				<div class="panel panel-default">
+				  <div class="panel-heading">Q: In terms of shift groups, the groups rotate on a working rota which remains constant. Is it possible that one group is setting up for another?</div>
+				  <div class="panel-body">
+					A:  It is possible that this is a contributing factor to the profitability of a shift.  However the group rota distributes the shifts relatively evenly across the week.  Therefore
+					any direct impact of one shift group setting up for another should be off-put against each group evenly in the course of a month.
+				  </div>
+				</div>
+				
+				<div class="panel panel-default">
+				  <div class="panel-heading">Q: Are clean down days causing the difference seen in daily production levels?</div>
+				  <div class="panel-body">
+					A:  There has been no evidence found in this analysis to suggest the clean down rota is the cause for the difference in production levels. 
+					Further analysis would be required with details provided of this cycle.  However, a six day cycle as is currently used should shift production
+					levels evenly across week days in the period of a month due to the clean down day not occurring on the same day consecutively.
+				  </div>
+				</div>
+				
+				<div class="panel panel-default">
+				  <div class="panel-heading">Q: Is there one day which is always more profitable?</div>
+				  <div class="panel-body">
+					A:  Thursday shifts have consistently out performed other days in production levels, making them the more profitable.
+				  </div>
+				</div>
+				
+				<div class="panel panel-default">
+				  <div class="panel-heading">Q: What is the cause of the difference in profitability on Thursdays?</div>
+				  <div class="panel-body">
+					A:  The analysis was unable to identify the root cause of this difference in production.  It is possible that this cause is generated by
+					differences in shift groups and management on Thursday's.  This is a topic which can be discussed further with the Head of Production.
+				  </div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="../javascripts/productTabNavigation.js"></script>
+		<script src="../javascripts/contentBreakDown.js"></script>
+		
+	</body>
+</html>
+
