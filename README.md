@@ -26,6 +26,15 @@ The project will explore and evaluate different data mining methods. Different m
 	- [express](https://www.npmjs.com/package/express) Version 4.12.3
 	- [mysql](https://www.npmjs.com/package/mysql) Version 2.6.0 
 
+#### Installation ####
+
+1. Download and install Node JS using the link in the above dependencies
+2. Clone this Git Repository to your local machine
+3. Open command prompt and change to the directory of the cloned repository, such that you are in the directory where the package.json file is located
+4. Run the command: "npm install"
+
+NPM should then install the dependent modules.  To start the server and run the application then run the command "node server" in the command prompt.
+
 #### Acknowledgements ####
 
 Dr Jianhua Shao, for sharing his expertise and experience in the data mining field, steering this project in the appropriate direction.  Dr Andrew Jones, for all his support and suggestions throughout the projects progression and documentation.  To Viridor's management team and domain expert who have provided this project with valuable insight and expert knowledge.

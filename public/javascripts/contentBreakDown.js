@@ -15,6 +15,7 @@ function addDailyTable(product){
 */
 function addPatternTable(product){
 	addTitle("Breakdown of Average Production, Downtime and Runtime <br> for Product " + product.replace('shift', '') + " by Shift Pattern");
+	addTitle("Breakdown of Average Production, Downtime and Runtime <br> for Product " + product.replace('shift', '') + " by Shift Pattern");
 	dataRequest('/patternBreakDown/B', populateTable, createTable());
 }
 
@@ -93,7 +94,7 @@ function createTable(){
 	div.append('a')		
 		.on('click', function(){ exportTableToCSV(table[0][0], this); })
 		.attr('target', '_blank')
-		.attr('download', 'myFile.csv')
+		.attr('download', 'PAS_Content.csv')
 		.style('float', 'right')
 		.html('Download to MS Excel');
 	

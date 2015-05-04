@@ -1,4 +1,6 @@
 function exportTableToCSV(table, link) {
+	window.alert("Download will begin in a moment. Please wait before clicking again.");
+
 	var rows = table.rows;
 	var colDelim = ',';
 	var rowDelim = '\r\n';
